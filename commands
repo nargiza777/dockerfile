@@ -1,0 +1,20 @@
+sudo yum -y install docker
+sudo systemctl start docker
+sudo docker info
+grep docker /etc/group
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
+docker system info
+docker run hello-world
+docker run --name web-server -d -p 8080:80 nginx:1.12
+curl localhost:8080
+docker ps
+docker ps -a
+docker stop web-server
+docker start web-server
+docker logs web-server
+docker exec -it web-server /bin/bash
+sudo yum -y install git
+git clone https://github.com/cloudacademy/flask-content-advisor.git
+cd flask-content-advisor
